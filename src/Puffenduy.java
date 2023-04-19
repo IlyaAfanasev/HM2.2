@@ -34,16 +34,21 @@ public class Puffenduy extends Hogwarts{
     public void setHonesty(int honesty) {
         this.honesty = honesty;
     }
+    public static void bestStudent(Puffenduy puffenduy1, Puffenduy puffenduy2) {
+        int puffenduySum1 =puffenduy1.getDiligence()+puffenduy1.getLoyalty()+puffenduy1.getHonesty();
+        int puffenduySum2 =puffenduy2.getDiligence()+puffenduy2.getLoyalty()+puffenduy2.getHonesty();
 
+        if (puffenduySum1>puffenduySum2) {
+            System.out.println(puffenduy1.getName()+" лучший Пуфендуец , чем "+puffenduy2.getName()+
+                    ". "+puffenduySum1+"/"+puffenduySum2);
+        } else if (puffenduySum2>puffenduySum1) {
+            System.out.println(puffenduy2.getName()+" лучший Пуфендуец, чем "+puffenduy1.getName()+
+                    ". "+puffenduySum2+"/"+puffenduySum1);
+        } else System.out.println("Ученики, " +puffenduy1.getName()+" и "+puffenduy2.getName()+
+                " равны в своих характеристиках. "+puffenduySum1+"/"+puffenduySum2);
+    }
     @Override
     public String toString() {
-        return "Puffenduy{" +
-                ", name='" + name + '\'' +
-                "diligence=" + diligence +
-                ", loyalty=" + loyalty +
-                ", honesty=" + honesty +
-                ", magicPower=" + magicPower +
-                ", transgressionDistance=" + transgressionDistance +
-                '}';
+        return super.toString() + ", трудолюбие = " + diligence + ", верность = " + loyalty + ", честность = " + honesty;
     }
 }

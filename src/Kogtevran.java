@@ -43,17 +43,22 @@ public class Kogtevran extends Hogwarts{
     public void setCreativity(int creativity) {
         this.creativity = creativity;
     }
+    public static void bestStudent(Kogtevran kogtevran1, Kogtevran kogtevran2) {
+        int kogtevranSum1 =kogtevran1.getSmartness()+kogtevran1.getWisdom()+kogtevran1.getWit()+kogtevran1.getCreativity();
+        int kogtevranSum2 =kogtevran2.getSmartness()+kogtevran2.getWisdom()+kogtevran2.getWit()+kogtevran2.getCreativity();
 
+        if (kogtevranSum1>kogtevranSum2) {
+            System.out.println(kogtevran1.getName()+" лучший Когтевранец , чем "+kogtevran2.getName()+
+                    ". "+kogtevranSum1+"/"+kogtevranSum2);
+        } else if (kogtevranSum2>kogtevranSum1) {
+            System.out.println(kogtevran2.getName()+" лучший Когтевранец, чем "+kogtevran1.getName()+
+                    ". "+kogtevranSum2+"/"+kogtevranSum1);
+        } else System.out.println("Ученики, " +kogtevran1.getName()+" и "+kogtevran2.getName()+
+                " равны в своих характеристиках. "+kogtevranSum1+"/"+kogtevranSum2);
+    }
     @Override
     public String toString() {
-        return "Kogtevran{" +
-                ", name='" + name + '\'' +
-                "smartness=" + smartness +
-                ", wisdom=" + wisdom +
-                ", wit=" + wit +
-                ", creativity=" + creativity +
-                ", magicPower=" + magicPower +
-                ", transgressionDistance=" + transgressionDistance +
-                '}';
+        return super.toString() + ", ум = " + smartness + ", мудрость = " + wisdom + "," +
+                ", остроумие = " + wit+ ", творчество = "+creativity;
     }
 }
